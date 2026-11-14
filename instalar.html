@@ -42,6 +42,9 @@ summary::-webkit-details-marker { display: none; }
 summary::before { content: '＋'; margin-right: 12px; }
 details[open] summary::before { content: '－'; }
 details > div { padding: 0 20px 20px; }
+.link-abrir { display: inline-block; min-height: 48px; padding: 6px 0; color: var(--primaria); font-family: var(--fonte-interface); font-weight: 700; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
+.link-abrir:focus-visible { outline: 4px solid var(--ouro); outline-offset: 2px; }
+.ja-esta { color: #1E6B3A; font-family: var(--fonte-interface); font-weight: 700; }
 .rodape { text-align: center; color: var(--suave); font-family: var(--fonte-interface); }
 .rodape a { color: var(--primaria); font-weight: 700; }
 [hidden] { display: none !important; }
@@ -69,7 +72,7 @@ details > div { padding: 0 20px 20px; }
   <section class="cartao" id="passos-android" data-titulo="Celular Android">
     <h2>Celular Android</h2>
     <ol>
-      <li>Abra esta página no <strong>Chrome</strong>.</li>
+      <li>Abra esta página no <strong>Chrome</strong> <a class="link-abrir" data-alvo="chrome-android" href="intent://marciolessa.github.io/oratorio/instalar.html#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=https%3A%2F%2Fmarciolessa.github.io%2Foratorio%2Finstalar.html;end">clicando aqui</a><span class="ja-esta" hidden> — você já está nele ✓</span>.</li>
       <li>Toque nos <strong>três pontinhos</strong> <span class="icone-txt" aria-hidden="true">⋮</span> no canto de cima, à direita.</li>
       <li>Toque em <strong>Instalar app</strong> ou em <strong>Adicionar à tela inicial</strong>.</li>
       <li>Confirme tocando em <strong>Instalar</strong>.</li>
@@ -80,7 +83,7 @@ details > div { padding: 0 20px 20px; }
   <section class="cartao" id="passos-iphone" data-titulo="iPhone ou iPad">
     <h2>iPhone ou iPad</h2>
     <ol>
-      <li>Abra esta página no <strong>Safari</strong> (o navegador da bússola azul).</li>
+      <li>Abra esta página no <strong>Safari</strong> (o navegador da bússola azul) <a class="link-abrir" data-alvo="safari" href="x-safari-https://marciolessa.github.io/oratorio/instalar.html">clicando aqui</a><span class="ja-esta" hidden> — você já está nele ✓</span>.</li>
       <li>Toque no botão <strong>Compartilhar</strong> <span class="icone-txt" aria-hidden="true">⇧</span> — um quadrado com uma seta para cima, na parte de baixo da tela.</li>
       <li>Role a lista para baixo e toque em <strong>Adicionar à Tela de Início</strong>.</li>
       <li>Toque em <strong>Adicionar</strong>, no canto de cima.</li>
@@ -91,7 +94,7 @@ details > div { padding: 0 20px 20px; }
   <section class="cartao" id="passos-windows" data-titulo="Computador com Windows">
     <h2>Computador com Windows</h2>
     <ol>
-      <li>Abra esta página no <strong>Google Chrome</strong> ou no <strong>Microsoft Edge</strong>.</li>
+      <li>Abra esta página no <strong>Microsoft Edge</strong> <a class="link-abrir" data-alvo="edge" href="microsoft-edge:https://marciolessa.github.io/oratorio/instalar.html">clicando aqui</a><span class="ja-esta" hidden> — você já está nele ✓</span>, ou no <strong>Google Chrome</strong>.</li>
       <li>Na barra de endereço, lá em cima, clique no ícone de <strong>instalar</strong> <span class="icone-txt" aria-hidden="true">⊕</span> (um monitor com uma seta ou um sinal de mais).</li>
       <li>Se não aparecer o ícone: no Chrome, abra o menu <span class="icone-txt" aria-hidden="true">⋮</span> → <strong>Transmitir, salvar e compartilhar</strong> → <strong>Instalar página como app</strong>. No Edge, abra o menu <span class="icone-txt" aria-hidden="true">…</span> → <strong>Aplicativos</strong> → <strong>Instalar este site como um aplicativo</strong>.</li>
       <li>Clique em <strong>Instalar</strong>. O Oratório ganha um ícone no menu Iniciar e na área de trabalho.</li>
@@ -135,6 +138,23 @@ details > div { padding: 0 20px 20px; }
   });
 
   if (instalado) document.getElementById('ja-instalado').hidden = false;
+
+  // Se a pessoa já está no navegador certo, troca "clicando aqui" por "você já está nele"
+  var noApp = /; wv\)|FBAN|FBAV|Instagram|Line\/|WhatsApp/.test(ua);
+  var atual = {
+    'chrome-android': ehAndroid && /Chrome\//.test(ua) && !/EdgA|SamsungBrowser|OPR|Firefox|YaBrowser/.test(ua) && !noApp,
+    'safari': ehIOS && /Version\/[\d.]+.*Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS|GSA|DuckDuckGo/.test(ua) && !noApp,
+    'edge': !ehAndroid && !ehIOS && /Edg\//.test(ua)
+  };
+  Array.prototype.forEach.call(document.querySelectorAll('.link-abrir'), function (a) {
+    var alvo = a.getAttribute('data-alvo');
+    var noChromeWindows = alvo === 'edge' && !ehAndroid && !ehIOS && /Chrome\//.test(ua) && !/Edg\/|OPR/.test(ua);
+    if (atual[alvo] || noChromeWindows) {
+      a.hidden = true;
+      a.nextElementSibling.hidden = false;
+      if (noChromeWindows) a.parentNode.innerHTML = 'Abra esta página no <strong>Google Chrome</strong> ou no <strong>Microsoft Edge</strong><span class="ja-esta"> — você já está no Chrome ✓</span>.';
+    }
+  });
 
   // Botão de instalação direta (Chrome/Edge no Android e no Windows)
   var pedido = null;
