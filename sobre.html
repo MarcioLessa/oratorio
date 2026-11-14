@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#24527A">
+<link rel="icon" href="icones/icone-192.png">
+<title>Fontes e créditos</title>
+<style>
+/* Mesma paleta serena do Oratório (contraste AAA) */
+:root {
+  --fundo: #F3F6F8; --texto: #1B2631; --suave: #3B4A57;
+  --primaria: #24527A; --primaria-escura: #173A59;
+  --ouro: #C9A54C; --linha: #D6E0E8; --branco: #FFFFFF; --realce: #E6EEF5;
+  --fonte-leitura: Georgia, "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --fonte-interface: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font-family: var(--fonte-leitura); font-size: 22px; line-height: 1.6; }
+.topo { position: sticky; top: 0; background: var(--fundo); border-bottom: 3px solid var(--ouro); padding: calc(10px + env(safe-area-inset-top)) 16px 10px; }
+.topo h1 { margin: 0; font-size: 30px; color: var(--primaria); letter-spacing: .04em; }
+.topo h1 span { color: var(--ouro); }
+main { max-width: 760px; margin: 0 auto; padding: 20px 16px 40px; }
+h2 { font-size: 30px; color: var(--primaria); margin: 6px 0 14px; line-height: 1.25; }
+h3 { font-size: 24px; color: var(--primaria); margin: 0 0 8px; line-height: 1.3; }
+p { margin: 0 0 10px; }
+.cartao { background: var(--branco); border: 2px solid var(--linha); border-radius: 18px; padding: 20px; margin: 0 0 20px; }
+ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+li { border-left: 5px solid var(--ouro); padding: 2px 0 2px 14px; }
+.uso { display: block; font-family: var(--fonte-interface); font-size: 22px; color: var(--suave); }
+a { color: var(--primaria); font-family: var(--fonte-interface); font-weight: 700; word-break: break-word; text-underline-offset: 4px; }
+a:focus-visible, .botao:focus-visible, summary:focus-visible { outline: 5px solid var(--texto); outline-offset: 4px; border-radius: 8px; }
+.licenca { font-family: var(--fonte-interface); font-size: 22px; color: var(--suave); }
+.botao {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: 80px; width: 100%; padding: 16px 22px;
+  border: 3px solid var(--primaria); border-radius: 18px;
+  background: var(--primaria); color: var(--branco);
+  font-family: var(--fonte-interface); font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em;
+  text-decoration: none; box-shadow: 0 5px 0 var(--primaria-escura);
+}
+.botao:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--primaria-escura); }
+.botao svg { width: 32px; height: 32px; }
+details { margin: 0 0 20px; }
+summary { cursor: pointer; font-family: var(--fonte-interface); font-size: 24px; font-weight: 800; color: var(--primaria); min-height: 72px; display: flex; align-items: center; padding: 0 20px; background: var(--branco); border: 2px solid var(--linha); border-radius: 18px; }
+details[open] summary { border-radius: 18px 18px 0 0; }
+details .cartao { border-top: 0; border-radius: 0 0 18px 18px; }
+</style>
+</head>
+<body>
+<header class="topo"><h1><span aria-hidden="true">✝ </span>Oratório</h1></header>
+<main>
+  <a class="botao" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    Voltar ao Oratório
+  </a>
+
+  <h2 style="margin-top:24px">Fontes e créditos</h2>
+  <p>De onde vêm os textos, os dados e as ferramentas usadas no Oratório.</p>
+
+  <!-- ================= Conteúdo ================= -->
+  <section class="cartao" aria-labelledby="t-conteudo">
+    <h3 id="t-conteudo">Orações, Bíblia e Santos</h3>
+    <ul>
+      <li><strong>Principais Orações da Igreja Católica</strong> — compilação devocional para catequese e paróquia.
+        <span class="uso">Usada em: Terço, aba Orações e novenas.</span></li>
+      <li><strong>Terço — Rezando o Terço em Família</strong> — orações e mistérios do Rosário.
+        <span class="uso">Usada em: mistérios, intenções das três primeiras Ave-Marias, jaculatória e agradecimento.</span></li>
+      <li><strong>Bíblia Portuguesa Mundial</strong> (porbrbsl), publicada pelo eBible.org — domínio público. É um rascunho de tradução ainda em revisão; problemas e sugestões podem ser enviados para <a href="mailto:porbrbsl@eBible.org">porbrbsl@eBible.org</a>.
+        <span class="uso">Adaptações feitas pelo Oratório, as mesmas usadas pelo site Bíblicas: 73 livros, no cânon e na ordem católicos; Ester e Daniel nas versões gregas (Daniel com 14 capítulos); ficaram de fora 1 e 2 Esdras (gregos), Oração de Manassés, Salmo 151 e 3 e 4 Macabeus; Tobit aparece como Tobias e Sirácida como Eclesiástico; a doxologia final de Romanos está em 16,25-27; notas de rodapé omitidas; Salmos na numeração hebraica.</span>
+        <span class="uso">Não é uma edição com aprovação eclesiástica (imprimatur).</span>
+        <span class="uso">Usada em: aba Bíblia, texto do Evangelho quando não há internet e Benedictus.</span>
+        <span class="uso"><a href="https://ebible.org/porbrbsl/">ebible.org/porbrbsl</a> · adaptação de referência: <a href="https://www.biblicas.com.br/creditos">biblicas.com.br/creditos</a></span></li>
+      <li><strong>Santos — Calendário, invocações, orações e novenas</strong> (planilha com imagens).
+        <span class="uso">Usada em: aba Santos, Santo do Dia e novenas.</span></li>
+    </ul>
+  </section>
+
+  <!-- ================= Liturgia ================= -->
+  <section class="cartao" aria-labelledby="t-liturgia">
+    <h3 id="t-liturgia">Liturgia e calendário</h3>
+    <ul>
+      <li><strong>Liturgia Diária (API)</strong> — Evangelho, cor e celebração do dia, quando há internet.
+        <span class="uso"><a href="https://github.com/Dancrf/liturgia-diaria">github.com/Dancrf/liturgia-diaria</a></span>
+        <span class="uso"><a href="https://liturgia.up.railway.app/v2/">liturgia.up.railway.app</a></span></li>
+      <li><strong>romcal</strong> — calendário litúrgico do Brasil (out/2026 a dez/2030). <span class="licenca">Licença MIT.</span>
+        <span class="uso"><a href="https://github.com/romcal/romcal">github.com/romcal/romcal</a></span></li>
+      <li><strong>GCatholic — Calendário Litúrgico do Brasil</strong> — conferência das datas transferidas para o domingo.
+        <span class="uso"><a href="https://gcatholic.org/calendar/2027/BR-pt">gcatholic.org/calendar/2027/BR-pt</a></span></li>
+      <li><strong>Lecionário da Missa</strong> — referências do Evangelho de cada dia. Tabela do projeto Catholic Lectionary on ESP8266, baseada no trabalho de Felix Just. <span class="licenca">Licença GPL-3.0.</span>
+        <span class="uso"><a href="https://github.com/plishman/Catholic-Lectionary-on-ESP8266">github.com/plishman/Catholic-Lectionary-on-ESP8266</a></span>
+        <span class="uso"><a href="https://www.catholic-resources.org/Lectionary/">catholic-resources.org/Lectionary</a></span></li>
+    </ul>
+  </section>
+
+  <!-- ================= Voz ================= -->
+  <section class="cartao" aria-labelledby="t-voz">
+    <h3 id="t-voz">Voz de leitura</h3>
+    <ul>
+      <li><strong>Piper</strong> — leitura em voz alta com vozes neurais, sem internet. <span class="licenca">Licença MIT.</span>
+        <span class="uso"><a href="https://github.com/rhasspy/piper">github.com/rhasspy/piper</a></span></li>
+      <li><strong>Vozes Faber, Cadu e Jeff</strong> (português do Brasil, masculinas).
+        <span class="uso"><a href="https://huggingface.co/rhasspy/piper-voices/blob/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx">Faber — rhasspy/piper-voices</a></span>
+        <span class="uso"><a href="https://huggingface.co/rhasspy/piper-voices/blob/main/pt/pt_BR/cadu/medium/MODEL_CARD">Cadu — ficha do modelo</a></span>
+        <span class="uso"><a href="https://huggingface.co/rhasspy/piper-voices/blob/main/pt/pt_BR/jeff/medium/MODEL_CARD">Jeff — ficha do modelo</a></span></li>
+      <li><strong>Vozes Miro (masculina) e Dii (feminina)</strong> — por OpenVoiceOS / TigreGotico. <span class="licenca">Licença CC BY-NC-ND 4.0: uso gratuito e não comercial, sem modificar os modelos.</span>
+        <span class="uso"><a href="https://huggingface.co/OpenVoiceOS/pipertts_pt-BR_miro">OpenVoiceOS/pipertts_pt-BR_miro</a></span>
+        <span class="uso"><a href="https://huggingface.co/OpenVoiceOS/pipertts_pt-BR_dii">OpenVoiceOS/pipertts_pt-BR_dii</a></span></li>
+      <li><strong>eSpeak NG</strong> — conversão do texto em fonemas (via piper-phonemize). <span class="licenca">Licença GPL-3.0.</span>
+        <span class="uso"><a href="https://github.com/espeak-ng/espeak-ng">github.com/espeak-ng/espeak-ng</a></span>
+        <span class="uso"><a href="https://www.npmjs.com/package/@diffusionstudio/piper-wasm">@diffusionstudio/piper-wasm</a> <span class="licenca">(MIT)</span></span></li>
+      <li><strong>ONNX Runtime Web</strong> — executa o modelo de voz no aparelho. <span class="licenca">Licença MIT.</span>
+        <span class="uso"><a href="https://github.com/microsoft/onnxruntime">github.com/microsoft/onnxruntime</a></span></li>
+    </ul>
+  </section>
+
+  <!-- ================= Privacidade ================= -->
+  <section class="cartao" aria-labelledby="t-privacidade">
+    <h3 id="t-privacidade">Privacidade</h3>
+    <p>O Oratório não pede cadastro e não coleta dados pessoais. O progresso do terço, as novenas e as preferências de voz ficam guardados só neste aparelho.</p>
+    <p>Com internet, o app consulta a Liturgia Diária para mostrar o Evangelho do dia e, se a pessoa pedir, baixa a voz de leitura escolhida.</p>
+  </section>
+
+  <!-- ================= Distribuição (para quem mantém o app) ================= -->
+  <details>
+    <summary>Para quem mantém o app: distribuição</summary>
+    <section class="cartao" aria-label="Referências de distribuição">
+      <ul>
+        <li><strong>PWABuilder</strong> — gera pacotes para Android, Windows e iPhone a partir do endereço do app.
+          <span class="uso"><a href="https://www.pwabuilder.com/">pwabuilder.com</a></span>
+          <span class="uso"><a href="https://capgo.app/alternatives/pwabuilder/">Comparação e limitações (Capgo)</a></span></li>
+        <li><strong>Microsoft Store</strong> — registro gratuito para desenvolvedores individuais.
+          <span class="uso"><a href="https://blogs.windows.com/windowsdeveloper/2025/09/10/free-developer-registration-for-individual-developers-on-microsoft-store/">blogs.windows.com — anúncio</a></span></li>
+        <li><strong>Google Play</strong> — teste fechado com 12 testadores por 14 dias para contas pessoais novas.
+          <span class="uso"><a href="https://support.google.com/googleplay/android-developer/answer/14151465?hl=pt-BR">Ajuda do Google Play</a></span>
+          <span class="uso"><a href="https://extendsclass.com/blog/google-plays-closed-testing-requirement-what-developers-need-to-know-in-2026">Resumo do requisito em 2026</a></span></li>
+        <li><strong>App Store</strong> — isenção da anuidade para organizações sem fins lucrativos (inclui o Brasil).
+          <span class="uso"><a href="https://www.macrumors.com/2020/02/03/apple-developer-program-memberships-free-new-countries/">MacRumors — isenção para organizações</a></span>
+          <span class="uso"><a href="https://www.windowscentral.com/microsoft/windows-11/microsoft-store-drops-fees-for-individual-developers-apple-still-charges-usd99-per-year/">Windows Central — custos das lojas</a></span></li>
+        <li><strong>Vozes do aparelho no Android</strong> — não funcionam dentro de apps nativos (WebView); por isso o Oratório traz voz própria.
+          <span class="uso"><a href="https://community.xibo.org.uk/t/android-player-speechsynthesis-web-speech-api-unavailable-in-webview-chromium-138/38219">Relato no fórum Xibo</a></span></li>
+      </ul>
+    </section>
+  </details>
+
+  <a class="botao" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    Voltar ao Oratório
+  </a>
+</main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+VOZES DO ORATÓRIO (Piper TTS – português do Brasil)
+
+Forma normal: no app, toque em VOZ (alto da tela) e em "Baixar a voz ...".
+Cada voz (~63 MB) é baixada uma vez e fica guardada no aparelho.
+Em VOZ também dá para escolher "Mais grave (voz madura)" para qualquer voz.
+
+Forma manual (para já distribuir o app com as vozes dentro):
+baixe os 2 arquivos de cada voz e coloque-os nesta pasta "voz", com os nomes exatamente assim.
+
+FABER
+  https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx
+  https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx.json
+CADU
+  https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/cadu/medium/pt_BR-cadu-medium.onnx
+  https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/cadu/medium/pt_BR-cadu-medium.onnx.json
+JEFF
+  https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/jeff/medium/pt_BR-jeff-medium.onnx
+  https://huggingface.co/rhasspy/piper-voices/resolve/main/pt/pt_BR/jeff/medium/pt_BR-jeff-medium.onnx.json
+MIRO (masculina) – OpenVoiceOS, licença CC BY-NC-ND 4.0 (uso não comercial)
+  https://huggingface.co/OpenVoiceOS/pipertts_pt-BR_miro/resolve/main/miro_pt-BR.onnx
+  https://huggingface.co/OpenVoiceOS/pipertts_pt-BR_miro/resolve/main/miro_pt-BR.onnx.json
+DII (feminina) – OpenVoiceOS, licença CC BY-NC-ND 4.0 (uso não comercial)
+  https://huggingface.co/OpenVoiceOS/pipertts_pt-BR_dii/resolve/main/dii_pt-BR.onnx
+  https://huggingface.co/OpenVoiceOS/pipertts_pt-BR_dii/resolve/main/dii_pt-BR.onnx.json
+
+As vozes funcionam quando o app é aberto por um endereço http/https
+(site, GitHub Pages, servidor local) ou instalado como aplicativo.
+Abrindo o index.html direto do disco, o app usa as vozes do aparelho.
+
+Componentes (todos livres): Piper / piper-phonemize (espeak-ng), ONNX Runtime Web 1.17.3.

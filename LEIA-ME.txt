@@ -1,0 +1,16 @@
+ORATÓRIO
+
+NO COMPUTADOR (Windows)
+1. Dê dois cliques em "Baixar vozes" (uma vez só; baixa as 5 vozes, cerca de 320 MB).
+2. Dê dois cliques em "Abrir Oratorio". O app abre no navegador com as vozes funcionando.
+   Deixe a janela preta aberta enquanto usa o app; feche-a para encerrar.
+   Se o Windows avisar sobre o arquivo, clique em "Mais informações" e "Executar assim mesmo".
+Abrindo o index.html direto (dois cliques), o app funciona, mas só com as vozes do computador.
+
+NO CELULAR
+Publique esta pasta num endereço https (ex.: Cloudflare Pages ou GitHub Pages) e abra o endereço:
+Android: Chrome > menu > "Instalar app". iPhone: Safari > Compartilhar > "Adicionar à Tela de Início".
+As vozes que estiverem na pasta "voz" vão junto; as que não estiverem podem ser baixadas pelo botão VOZ.
+
+Pastas: santos/ (imagens), voz/ (motor e arquivos das vozes), icones/.
+Arquivos: biblia.json e biblia.js (Bíblia), sw.js (modo offline), sobre.html (fontes e créditos).
