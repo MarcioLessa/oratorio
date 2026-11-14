@@ -58,6 +58,13 @@ details > div { padding: 0 20px 20px; }
 <main>
   <h2>Como instalar no seu aparelho</h2>
 
+  <section id="aviso-app" class="cartao destaque" hidden aria-labelledby="t-app" style="border-color:var(--ouro);background:var(--ouro-claro)">
+    <h2 id="t-app" style="font-size:26px">Você abriu pelo <span id="nome-app">Instagram</span></h2>
+    <p style="margin:0 0 8px">Por dentro dele não dá para instalar. Toque no botão para abrir esta página no navegador do celular e depois siga os passos.</p>
+    <a class="botao" id="botao-sair-app" href="intent://marciolessa.github.io/oratorio/instalar.html#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=https%3A%2F%2Fmarciolessa.github.io%2Foratorio%2Finstalar.html;end">Abrir no navegador</a>
+    <p id="dica-app" style="margin:12px 0 0;font-size:22px">Se o botão não funcionar, toque nos <strong>três pontinhos</strong> no canto de cima e escolha <strong>Abrir no navegador</strong>.</p>
+  </section>
+
   <div id="ja-instalado" class="aviso" hidden>O Oratório já está instalado neste aparelho. É só tocar no ícone dele na tela inicial.</div>
 
   <!-- Botão automático (Android e Windows, quando o navegador permite) -->
@@ -146,6 +153,19 @@ details > div { padding: 0 20px 20px; }
     'safari': ehIOS && /Version\/[\d.]+.*Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS|GSA|DuckDuckGo/.test(ua) && !noApp,
     'edge': !ehAndroid && !ehIOS && /Edg\//.test(ua)
   };
+  if (noApp) {
+    var nome = /Instagram/.test(ua) ? 'Instagram' : /FBAN|FBAV/.test(ua) ? 'Facebook' : /WhatsApp/.test(ua) ? 'WhatsApp' : 'aplicativo';
+    document.getElementById('nome-app').textContent = nome === 'aplicativo' ? 'outro aplicativo' : nome;
+    if (ehIOS) {
+      document.getElementById('botao-sair-app').href = 'x-safari-https://marciolessa.github.io/oratorio/instalar.html';
+      document.getElementById('botao-sair-app').textContent = 'Abrir no Safari';
+      document.getElementById('dica-app').innerHTML = 'Se o botão não funcionar, toque nos <strong>três pontinhos</strong> no canto de cima e escolha <strong>Abrir no navegador</strong> ou <strong>Abrir no Safari</strong>.';
+    } else if (ehAndroid) {
+      document.getElementById('botao-sair-app').textContent = 'Abrir no Chrome';
+    }
+    document.getElementById('aviso-app').hidden = false;
+  }
+
   Array.prototype.forEach.call(document.querySelectorAll('.link-abrir'), function (a) {
     var alvo = a.getAttribute('data-alvo');
     var noChromeWindows = alvo === 'edge' && !ehAndroid && !ehIOS && /Chrome\//.test(ua) && !/Edg\/|OPR/.test(ua);
