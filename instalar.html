@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Como instalar o Oratório</title>
+<meta name="description" content="Como instalar o Oratório no Android, no iPhone e no Windows.">
+<meta name="theme-color" content="#24527A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icones/icone-192.png">
+<link rel="apple-touch-icon" href="icones/icone-192.png">
+<style>
+:root {
+  --fundo: #F3F6F8; --texto: #1B2631; --suave: #3B4A57;
+  --primaria: #24527A; --primaria-escura: #173A59;
+  --ouro: #C9A54C; --ouro-claro: #F4ECD6; --linha: #D6E0E8; --branco: #FFFFFF; --realce: #E6EEF5;
+  --fonte-leitura: Georgia, "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+  --fonte-interface: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font-family: var(--fonte-leitura); font-size: 22px; line-height: 1.6; }
+.topo { background: var(--fundo); border-bottom: 3px solid var(--ouro); padding: calc(12px + env(safe-area-inset-top)) 16px 12px; display: flex; align-items: center; gap: 14px; }
+.topo img { width: 56px; height: 56px; border-radius: 12px; }
+.topo h1 { margin: 0; font-size: 30px; color: var(--primaria); letter-spacing: .04em; }
+main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+h2 { font-size: 30px; color: var(--primaria); margin: 6px 0 14px; line-height: 1.25; }
+.cartao { background: var(--branco); border: 2px solid var(--linha); border-radius: 18px; padding: 20px; margin: 0 0 22px; }
+.cartao.destaque { border-color: var(--primaria); box-shadow: 0 4px 0 var(--realce); }
+ol { margin: 0; padding-left: 1.4em; }
+ol li { margin: 0 0 14px; padding-left: 4px; }
+ol li::marker { color: var(--primaria); font-weight: 700; font-family: var(--fonte-interface); }
+strong { color: var(--primaria-escura); }
+.icone-txt { display: inline-block; min-width: 1.6em; padding: 0 6px; border: 2px solid var(--primaria); border-radius: 8px; text-align: center; font-family: var(--fonte-interface); font-weight: 700; color: var(--primaria); background: var(--realce); }
+.botao { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 72px; padding: 12px 20px; margin: 8px 0 0; border: 0; border-radius: 16px; background: var(--primaria); color: var(--branco); font: 700 24px/1.2 var(--fonte-interface); text-decoration: none; cursor: pointer; }
+.botao:hover { background: var(--primaria-escura); }
+.botao:focus-visible, summary:focus-visible { outline: 4px solid var(--ouro); outline-offset: 3px; }
+.botao.secundario { background: var(--branco); color: var(--primaria); border: 3px solid var(--primaria); }
+.aviso { background: var(--ouro-claro); border-left: 6px solid var(--ouro); border-radius: 12px; padding: 14px 16px; margin: 0 0 22px; }
+details { background: var(--branco); border: 2px solid var(--linha); border-radius: 18px; margin: 0 0 18px; }
+summary { min-height: 72px; display: flex; align-items: center; padding: 12px 20px; font: 700 24px/1.3 var(--fonte-interface); color: var(--primaria); cursor: pointer; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '＋'; margin-right: 12px; }
+details[open] summary::before { content: '－'; }
+details > div { padding: 0 20px 20px; }
+.rodape { text-align: center; color: var(--suave); font-family: var(--fonte-interface); }
+.rodape a { color: var(--primaria); font-weight: 700; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header class="topo">
+  <img src="icones/icone-192.png" alt="">
+  <h1>Oratório</h1>
+</header>
+<main>
+  <h2>Como instalar no seu aparelho</h2>
+
+  <div id="ja-instalado" class="aviso" hidden>O Oratório já está instalado neste aparelho. É só tocar no ícone dele na tela inicial.</div>
+
+  <!-- Botão automático (Android e Windows, quando o navegador permite) -->
+  <section id="instalar-automatico" class="cartao destaque" hidden aria-labelledby="t-auto">
+    <h2 id="t-auto" style="font-size:26px">Jeito mais fácil</h2>
+    <p style="margin:0 0 8px">Toque no botão abaixo e depois em <strong>Instalar</strong>.</p>
+    <button type="button" class="botao" id="botao-instalar">Instalar o Oratório</button>
+  </section>
+
+  <div id="passos"><!-- os cartões são colocados aqui na ordem certa para o aparelho --></div>
+
+  <section class="cartao" id="passos-android" data-titulo="Celular Android">
+    <h2>Celular Android</h2>
+    <ol>
+      <li>Abra esta página no <strong>Chrome</strong>.</li>
+      <li>Toque nos <strong>três pontinhos</strong> <span class="icone-txt" aria-hidden="true">⋮</span> no canto de cima, à direita.</li>
+      <li>Toque em <strong>Instalar app</strong> ou em <strong>Adicionar à tela inicial</strong>.</li>
+      <li>Confirme tocando em <strong>Instalar</strong>.</li>
+      <li>O ícone do Oratório aparece junto dos outros aplicativos.</li>
+    </ol>
+  </section>
+
+  <section class="cartao" id="passos-iphone" data-titulo="iPhone ou iPad">
+    <h2>iPhone ou iPad</h2>
+    <ol>
+      <li>Abra esta página no <strong>Safari</strong> (o navegador da bússola azul).</li>
+      <li>Toque no botão <strong>Compartilhar</strong> <span class="icone-txt" aria-hidden="true">⇧</span> — um quadrado com uma seta para cima, na parte de baixo da tela.</li>
+      <li>Role a lista para baixo e toque em <strong>Adicionar à Tela de Início</strong>.</li>
+      <li>Toque em <strong>Adicionar</strong>, no canto de cima.</li>
+      <li>O ícone do Oratório aparece na tela do iPhone.</li>
+    </ol>
+  </section>
+
+  <section class="cartao" id="passos-windows" data-titulo="Computador com Windows">
+    <h2>Computador com Windows</h2>
+    <ol>
+      <li>Abra esta página no <strong>Google Chrome</strong> ou no <strong>Microsoft Edge</strong>.</li>
+      <li>Na barra de endereço, lá em cima, clique no ícone de <strong>instalar</strong> <span class="icone-txt" aria-hidden="true">⊕</span> (um monitor com uma seta ou um sinal de mais).</li>
+      <li>Se não aparecer o ícone: no Chrome, abra o menu <span class="icone-txt" aria-hidden="true">⋮</span> → <strong>Transmitir, salvar e compartilhar</strong> → <strong>Instalar página como app</strong>. No Edge, abra o menu <span class="icone-txt" aria-hidden="true">…</span> → <strong>Aplicativos</strong> → <strong>Instalar este site como um aplicativo</strong>.</li>
+      <li>Clique em <strong>Instalar</strong>. O Oratório ganha um ícone no menu Iniciar e na área de trabalho.</li>
+    </ol>
+  </section>
+
+  <a class="botao secundario" href="./index.html">Abrir o Oratório sem instalar</a>
+
+  <p class="rodape" style="margin-top:28px">Gratuito, sem propaganda e sem cadastro.<br><a href="sobre.html">Fontes e créditos</a></p>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var ua = navigator.userAgent || '';
+  var ehIOS = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var ehAndroid = /Android/.test(ua);
+  var instalado = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+  // Ordem: o aparelho da pessoa primeiro, aberto; os outros recolhidos
+  var ids = ehIOS ? ['passos-iphone', 'passos-android', 'passos-windows']
+          : ehAndroid ? ['passos-android', 'passos-iphone', 'passos-windows']
+          : ['passos-windows', 'passos-android', 'passos-iphone'];
+  var destino = document.getElementById('passos');
+  ids.forEach(function (id, i) {
+    var sec = document.getElementById(id);
+    if (i === 0) {
+      sec.classList.add('destaque');
+      destino.appendChild(sec);
+      return;
+    }
+    var det = document.createElement('details');
+    var sum = document.createElement('summary');
+    sum.textContent = 'Outro aparelho: ' + sec.getAttribute('data-titulo');
+    var div = document.createElement('div');
+    var lista = sec.querySelector('ol');
+    div.appendChild(lista);
+    det.appendChild(sum); det.appendChild(div);
+    sec.parentNode.removeChild(sec);
+    destino.appendChild(det);
+  });
+
+  if (instalado) document.getElementById('ja-instalado').hidden = false;
+
+  // Botão de instalação direta (Chrome/Edge no Android e no Windows)
+  var pedido = null;
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    pedido = e;
+    document.getElementById('instalar-automatico').hidden = false;
+  });
+  document.getElementById('botao-instalar').addEventListener('click', function () {
+    if (!pedido) return;
+    pedido.prompt();
+    pedido.userChoice.then(function () { pedido = null; document.getElementById('instalar-automatico').hidden = true; });
+  });
+  window.addEventListener('appinstalled', function () {
+    document.getElementById('instalar-automatico').hidden = true;
+    document.getElementById('ja-instalado').hidden = false;
+  });
+
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () {});
+})();
+</script>
+</body>
+</html>
